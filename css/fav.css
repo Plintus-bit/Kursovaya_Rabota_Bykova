@@ -1,0 +1,296 @@
+@import url(style.css);
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#you_havent_fav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.fav_is_absent {
+    display: grid;
+    width: 30%;
+    grid-template-columns: 10% auto;
+    column-gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.goods_card .wr {
+    width: inherit;
+}
+.goods_card .top .text{
+    max-width: 100%;
+}
+#you_havent_fav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: var(--pink);
+    color: var(--white);
+}
+
+button:active {
+    background: var(--light_pink);
+    color: var(--white);
+}
+@media (max-width: 1600px) {
+    .fav_is_absent {
+        width: 40%;
+        column-gap: 5px;
+    } 
+}
+@media (max-width: 1130px) {
+    .fav_is_absent {
+        width: 45%;
+        column-gap: 5px;
+    } 
+}
+@media (max-width: 980px) {
+    .fav_is_absent {
+        width: 50%;
+        grid-template-columns: 9% auto;
+        column-gap: 10px;
+    } 
+}
+@media (max-width: 900px) {
+    .fav_is_absent {
+        width: 60%;
+        grid-template-columns: 10% auto;
+        column-gap: 7px;
+    } 
+}
+@media (max-width: 800px) {
+    .goods_card .top a {
+        line-height: 20px;
+    }
+}
+@media (max-width: 770px) {
+    .fav_is_absent {
+        width: 75%;
+        grid-template-columns: 8% auto;
+        column-gap: 10px;
+    } 
+    .fav_is_absent .text {
+        font-size: 14px;
+    }
+}
+@media (max-width: 720px) {
+    .fav_is_absent .h3 {
+        font-size: 16px;
+    }
+    .goods_card .top a {
+        line-height: 18px;
+    }
+}
+@media (max-width: 640px) {
+    .fav_is_absent {
+        width: 90%;
+    }
+    #you_havent_fav button {
+        width: 190px;
+        padding: 8px 10px;
+        font-size: 15px;
+    }
+    .fav_is_absent .text {
+        font-size: 13.5px;
+    }
+    .goods_card {
+        width: 175px;
+        height: 230px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 11);
+        margin-bottom: 7px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.3);
+        height: calc(var(--width) * 1.3);
+    }
+    .how_much_goods {
+        width: 86px;
+        height: 20px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 3.2);
+        height: calc(var(--width_in_px) * 2.3);
+    }
+    .goods_card .bottom {
+        padding: 0px 10px 10px 10px;
+    }
+    .goods_card .h4 {
+        font-size: 14.5px;
+    }
+    .goods_card .text {
+        font-size: 11.5px;
+    }
+    .goods_card .top {
+        padding: 0px 10px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 3.4);
+        height: calc(var(--width_in_px) * 3.4);
+    }
+    .favour, .disct {
+        transform: translate(-76%, -76%);
+        width: calc(var(--width_in_px) * 2.2);
+    }
+    .new {
+        font-size: 11.5px;
+    }
+    .goods {
+        gap: 20px 20px;
+    }
+}
+@media (max-width: 540px) {
+    .fav_is_absent {
+        width: 100%;
+    }
+    #you_havent_fav button {
+        width: 170px;
+        padding: 6px 8px;
+        font-size: 14px;
+    }
+    .content-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+@media (max-width: 520px) {
+    .fav_is_absent {
+        width: 80%;
+    }
+}
+@media (max-width: 460px) {
+    .goods_card {
+        width: 150px;
+        height: 205px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 10);
+        margin-bottom: 7px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.2);
+        height: calc(var(--width) * 1.2);
+    }
+    .how_much_goods {
+        width: 80px;
+        height: 20px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 3);
+        height: calc(var(--width_in_px) * 2.1);
+    }
+    .plus, .minus {
+        width: calc(var(--width_in_px) * 2);
+    }
+    .goods_card .bottom {
+        padding: 0px 7px 7px 7px;
+    }
+    .goods_card .h4 {
+        font-size: 14px;
+    }
+    .goods_card .text {
+        font-size: 11px;
+    }
+    .goods_card .top {
+        padding: 0px 10px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 3.2);
+        height: calc(var(--width_in_px) * 3.2);
+    }
+    .favour, .disct {
+        transform: translate(-78%, -72%);
+        width: calc(var(--width_in_px) * 2.1);
+    }
+    .new {
+        font-size: 11px;
+    }
+    .goods {
+        gap: 15px 15px;
+    }
+}
+@media (max-width: 430px) {
+    .fav_is_absent {
+        width: 90%;
+    }
+    #you_havent_fav button {
+        width: 150px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 375px) {
+    .goods_card {
+        width: 130px;
+        height: 185px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 9);
+        margin-bottom: 5px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.1);
+        height: calc(var(--width) * 1.1);
+    }
+    .how_much_goods {
+        width: 70px;
+        height: 18px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 2.9);
+        height: calc(var(--width_in_px) * 2.0);
+    }
+    .goods_card .h4 {
+        font-size: 13px;
+    }
+    .goods_card .text {
+        font-size: 10px;
+    }
+    .goods_card .top {
+        padding: 0px 7px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 2.9);
+        height: calc(var(--width_in_px) * 2.9);
+    }
+    .favour, .disct {
+        transform: translate(-78%, -72%);
+        width: calc(var(--width_in_px) * 1.9);
+    }
+    .new {
+        font-size: 10px;
+    }
+    .goods {
+        gap: 15px 15px;
+    }
+}
+@media (max-width: 370px) {
+    .fav_is_absent {
+        width: 70%;
+        column-gap: 20px;
+    }
+}

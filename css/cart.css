@@ -1,0 +1,247 @@
+@import url(style.css);
+
+.shops {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto;
+    width: 78%;
+    height: auto;
+    background-size: 100%;
+    border-radius: 10px;
+    background-image: url(../img_less_size/back.jpeg);
+    overflow: hidden;
+    padding: 30px 50px;
+    row-gap: 15px;
+    box-sizing: border-box;
+}
+
+.shops::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+}
+
+.shop {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: 220px auto;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    height: auto;
+    background: var(--white);
+    column-gap: 15px;
+    border-radius: 10px;
+}
+
+.shopping_img {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    height: 180px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content .h2 {
+    max-width: 80%;
+    max-height: 68px;
+    overflow: hidden;
+}
+
+.content .text {
+    max-height: 58px;
+    overflow: hidden;
+}
+
+.about_good, .cost_block {
+    display: flex;
+}
+.about_good {
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.cost_block p:nth-child(1){
+    margin-right: 15px;
+}
+.about_good .text {
+    color: var(--grey);
+}
+.about_good .how_much_goods .text {
+    color: var(--white);
+}
+
+.right_how_much {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.how_much_goods {
+    background: rgb(171, 171, 171, 0.5);
+}
+.plus:hover, .minus:hover {
+    background: var(--grey);
+}
+
+#saved_goods {
+    width: 320px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: var(--pink);
+    color: var(--white);
+}
+#collect_goods {
+    color: var(--pink);
+    text-decoration: underline var(--pink) 1px;
+    text-underline-offset: 4px;
+}
+#empty_cart {
+    position: absolute;
+}
+
+button:active {
+    background: var(--light_pink);
+}
+
+@media (max-width: 1350px) {
+    .out_of_cart {
+        padding: 2px;
+        width: 120px;
+        font-size: 14px;
+    }
+    .how_much_goods {
+        width: 140px;
+    }
+    .shops {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1180px) {
+    #we_have_goods .plus, .minus {
+        width: calc(var(--width_in_px) * 2);
+    }
+    #we_have_goods .h2 {
+        font-size: calc(18px + 5 * (100vw / 1920));
+        line-height: calc(25px + 5 * (100vw / 1920));
+    }
+    #we_have_goods .about_good .text {
+        font-size: calc(11px + 5 * (100vw / 1920));
+        line-height: calc(18px + 5 * (100vw / 1920));
+    }
+    .shop {
+        grid-template-columns: 180px auto;
+    }
+    .shopping_img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 1080px) {
+    #we_have_goods .h2 {
+        font-size: calc(16px + 5 * (100vw / 1920));
+        line-height: calc(23px + 5 * (100vw / 1920));
+    }
+    #we_have_goods .about_good .text {
+        font-size: calc(10px + 5 * (100vw / 1920));
+        line-height: calc(17px + 5 * (100vw / 1920));
+    }
+    .shop {
+        grid-template-columns: 140px auto;
+    }
+    .shopping_img {
+        height: 140px;
+    }
+}
+
+@media (max-width: 920px) {
+    .shop {
+        grid-template-columns: 120px auto;
+    }
+}
+
+@media (max-width: 780px) {
+    .shops {
+        padding: 20px 30px;
+        row-gap: 10px;
+    }
+    .shop {
+        grid-template-columns: 100px auto;
+        padding: 10px;
+        column-gap: 10px;
+    }
+    .shopping_img {
+        height: 125px;
+    }
+}
+
+@media (max-width: 750px) {
+    #empty_cart {
+        text-align: center;
+    }
+    #saved_goods {
+        font-size: 12px;
+        width: 240px;
+    }
+    .content-container {
+        padding: 30px 20px 50px 20px;
+    }
+    #we_have_goods .about_good .text {
+        max-width: 80px;
+    }
+}
+@media (max-width: 520px) {
+    #empty_cart .text {
+        max-width: 260px;
+    }
+    #saved_goods {
+        font-size: 12px;
+        width: 180px;
+        height: max-content;
+        padding: 1px;
+    }
+    .content-container {
+        padding: 20px 12px 30px 12px;
+    }
+    .shops {
+        padding: 15px 15px;
+        row-gap: 7px;
+    }
+    .shop {
+        padding: 7px;
+        column-gap: 7px;
+    }
+}
+@media (max-width: 460px) {
+    .shopping_img {
+        visibility: hidden;
+    }
+    .shop {
+        grid-template-columns: 0px auto;
+    }
+}
+
+/* Работает адекватно мин. для 350px */

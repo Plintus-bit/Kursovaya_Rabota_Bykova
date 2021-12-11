@@ -1,0 +1,117 @@
+
+.navigation_panel {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(var(--width_in_px) * 6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(../img_less_size/3.jpg);
+    background-size: 100%;
+    background-position: center center;
+}
+
+.navigation_panel::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    top: 0%;
+    left: 0%;
+    width: inherit;
+    height: inherit;
+    backdrop-filter: blur(2px);
+}
+
+.navigation_panel li {
+    position: relative;
+    z-index: 4;
+    width: calc(var(--width_in_px) * 22);
+    height: inherit;
+    background: transparent;
+    transition: 0.1s;
+}
+
+.navigation_panel a {
+    text-align: center;
+    color: var(--white);
+    background-color: transparent;
+    z-index: 4;
+}
+
+.navigation_panel li.active {
+    background: var(--pink);
+}
+
+.navigation_panel li:hover {
+    background: var(--pink);
+}
+
+li > a {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+li > a > div {
+    max-width: 120px;
+}
+
+.navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+    position: absolute;
+    top: 104%;
+    z-index: 2;
+    width: calc(var(--width_in_px) * 22);
+    height: auto;
+    background: rgb(255, 177, 191, 0.7);
+    transition: 0.1s;
+    opacity: 0;
+    visibility: hidden;
+}
+.navigation_panel .navigation_on_site .second_category {
+    top: 0%;
+    left: 101%;
+}
+.navigation_panel .navigation_on_site li, .navigation_panel .navigation_on_site li .second_category li {
+    position: relative;
+    display: block;
+    width: inherit;
+    height: auto;
+    box-sizing: border-box;
+    background: transparent;
+    transition: 0.1s;
+}
+.navigation_panel .navigation_on_site li a, .navigation_panel .navigation_on_site li .second_category li a {
+    position: relative;
+    justify-content: flex-start;
+    width: inherit;
+    height: auto;
+    box-sizing: border-box;
+    transition: 0.1s;
+    padding: 6px 0px;
+    padding-left: 10px;
+}
+.navigation_panel li:hover .navigation_on_site {
+    opacity: 1;
+    visibility: visible;
+}
+
+#navigation_panel .navigation_on_site li a div, #navigation_panel .navigation_on_site li .second_category li a div {
+    max-width: 90%;
+}
+
+.navigation_panel .navigation_on_site li:hover {
+    background: var(--pink);
+}
+.navigation_panel .navigation_on_site li .second_category li:hover {
+    background: var(--pink);
+}
+.navigation_panel .navigation_on_site li:hover .second_category {
+    opacity: 1;
+    visibility: visible;
+}
+

@@ -1,0 +1,355 @@
+@import url(style.css);
+@import url(nav_menu.css);
+
+.headers {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    --head_height: calc(var(--width_in_px) * 20);
+    height: calc(var(--width_in_px) * 14.6);
+    padding: calc(var(--width_in_px) * 3.0) 0px calc(var(--width_in_px) * 3.0) 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light_pink);
+}
+
+.goods {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 30px 30px;
+}
+
+.goods_card{
+    background: var(--light);
+}
+.goods_card .bottom {
+    color: var(--light);
+}
+.how_much_goods {
+    background: rgb(250, 125, 140, 0.4);
+}
+.in_shopping_cart {
+    background: var(--pink);
+}
+.cart {
+    stroke: var(--white);
+}
+.goods_card .top .text {
+    color: var(--grey);
+}
+.goods_card .top .text{
+    max-width: 100%;
+}
+.plus, .minus {
+    background: transparent;
+    color: var(--white);
+}
+
+section .description {
+    color: var(--grey);
+}
+
+.navigation_panel li.active {
+    background: var(--pink);
+}
+
+@media (max-width: 1860px) {
+    .goods {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px 30px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .header {
+        --head_height: calc(var(--width_in_px) * 18);
+    }
+    .navigation_panel {
+        height: calc(var(--width_in_px) * 5);
+    }
+
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 18);
+    }
+
+    .navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+        width: calc(var(--width_in_px) * 18);
+    }
+}
+
+@media (max-width: 1240px) {
+    .h2 {
+        font-size: calc(17px + 7 * (100vw / 1920));
+        line-height: calc(26px + 7 * (100vw / 1920))
+    }
+    .goods {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 30px;
+    }
+}
+@media (max-width: 1080px) {
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 16);
+    }
+    .navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+        width: calc(var(--width_in_px) * 16);
+    }
+}
+
+@media (max-width: 980px) {
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 14);
+    }
+    .navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+        width: calc(var(--width_in_px) * 14);
+    }
+    .navigation_panel .navigation_on_site .second_category {
+        top: 0%;
+        left: auto;
+        right: 102%;
+    }
+}
+@media (max-width: 940px) {
+    .goods {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+    }
+    .text {
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .h2 {
+        font-size: calc(15px + 7 * (100vw / 1920));
+        line-height: calc(24px + 7 * (100vw / 1920))
+    }
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 13);
+    }
+    .navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+        width: calc(var(--width_in_px) * 13);
+    }
+}
+
+@media (max-width: 830px) {
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 11.5);
+    }
+    .navigation_panel .navigation_on_site, .navigation_panel .navigation_on_site .second_category {
+        width: calc(var(--width_in_px) * 12.5);
+    }
+}
+
+@media (max-width: 750px) {
+    .navigation_panel li a div p {
+        display: none;
+    }
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 8);
+    }
+}
+@media (max-width: 640px) {
+    .goods_card {
+        width: 175px;
+        height: 230px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 11);
+        margin-bottom: 7px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.3);
+        height: calc(var(--width) * 1.3);
+    }
+    .how_much_goods {
+        width: 86px;
+        height: 20px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 3.2);
+        height: calc(var(--width_in_px) * 2.3);
+    }
+    .goods_card .bottom {
+        padding: 0px 10px 10px 10px;
+    }
+    .goods_card .h4 {
+        font-size: 14.5px;
+    }
+    .goods_card .text {
+        font-size: 11.5px;
+    }
+    .goods_card .top {
+        padding: 0px 10px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 3.4);
+        height: calc(var(--width_in_px) * 3.4);
+    }
+    .favour, .disct {
+        transform: translate(-76%, -76%);
+        width: calc(var(--width_in_px) * 2.2);
+    }
+    .new {
+        font-size: 11.5px;
+    }
+    .goods {
+        gap: 20px 20px;
+    }
+}
+@media (max-width: 520px) {
+    .header {
+        --head_height: calc(var(--width_in_px) * 14);
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+    .navigation_panel {
+        height: calc(var(--width_in_px) * 4);
+    }
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 4.5);
+    }
+    .sort {
+        width: 100%;
+    }
+    .tab_1 {
+        margin-bottom: 16px;
+    }
+    .tab_2 {
+        margin-bottom: 14px;
+    }
+    
+}
+@media (max-width: 460px) {
+    .goods_card {
+        width: 150px;
+        height: 205px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 10);
+        margin-bottom: 7px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.2);
+        height: calc(var(--width) * 1.2);
+    }
+    .how_much_goods {
+        width: 80px;
+        height: 20px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 3);
+        height: calc(var(--width_in_px) * 2.1);
+    }
+    .plus, .minus {
+        width: calc(var(--width_in_px) * 2);
+    }
+    .goods_card .bottom {
+        padding: 0px 7px 7px 7px;
+    }
+    .goods_card .h4 {
+        font-size: 14px;
+    }
+    .goods_card .text {
+        font-size: 11px;
+    }
+    .goods_card .top {
+        padding: 0px 10px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 3.2);
+        height: calc(var(--width_in_px) * 3.2);
+    }
+    .favour, .disct {
+        transform: translate(-78%, -72%);
+        width: calc(var(--width_in_px) * 2.1);
+    }
+    .new {
+        font-size: 11px;
+    }
+    .goods {
+        gap: 15px 15px;
+    }
+}
+@media (max-width: 375px) {
+    .goods_card {
+        width: 130px;
+        height: 185px;
+    }
+    .goods_card .top a {
+        max-height: 23px;
+        line-height: 15px;
+    }
+    .goods_card img {
+        block-size: calc(var(--width_in_px) * 9);
+        margin-bottom: 5px;
+    }
+    .shopping_cart {
+        width: calc(var(--width) * 1.1);
+        height: calc(var(--width) * 1.1);
+    }
+    .how_much_goods {
+        width: 70px;
+        height: 18px;
+    }
+    .in_shopping_cart {
+        width: calc(var(--width_in_px) * 2.9);
+        height: calc(var(--width_in_px) * 2.0);
+    }
+    .goods_card .h4 {
+        font-size: 13px;
+    }
+    .goods_card .text {
+        font-size: 10px;
+    }
+    .goods_card .top {
+        padding: 0px 7px;
+    }
+    .favourites, .new, .discount, .action {
+        width: calc(var(--width_in_px) * 2.9);
+        height: calc(var(--width_in_px) * 2.9);
+    }
+    .favour, .disct {
+        transform: translate(-78%, -72%);
+        width: calc(var(--width_in_px) * 1.9);
+    }
+    .new {
+        font-size: 10px;
+    }
+    .goods {
+        gap: 15px 15px;
+    }
+    .sorting {
+        height: 120px;
+    }
+    .sort {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .sort p {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 365px) {
+    .navigation_panel {
+        height: calc(var(--width_in_px) * 3.2);
+    }
+    .navigation_panel li {
+        width: calc(var(--width_in_px) * 4);
+    }
+}

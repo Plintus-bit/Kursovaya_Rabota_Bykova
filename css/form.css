@@ -1,0 +1,238 @@
+@import url(style.css);
+
+.content-container {
+    position: relative;
+}
+.h1 {
+    text-align: center;
+}
+#buy {
+    text-transform: uppercase;
+}
+
+#buy:active {
+    background: var(--light_pink);
+}
+
+input[type="text"], input[type="tel"] {
+    width: 240px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid var(--grey);
+    font-size: calc(var(--font_size) * 1.5);
+    line-height: calc(var(--font_size) * 2.0);
+    font-family: var(--font_Mont);
+    margin-bottom: 5px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+input[name="pay"], input[name="get"] {
+    margin-bottom: 15px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label::before {
+    content: '';
+    position: relative;
+    top: 3px;
+    display: inline-block;
+	width: 15px;
+	height: 16px;
+    margin-right: 7px;
+    background-image: url('../icons/not_select.png');
+    background-size: 100%;
+}
+
+.input {
+    margin-bottom: 7px;
+}
+
+input[type="radio"]:checked + label::before {
+    background-image: url('../icons/select.png');
+    background-size: 100%;
+}
+
+.wrap .text {
+    font-size: calc(var(--font_size) * 1.2);
+    color: var(--grey);
+    padding-bottom: 15px;
+}
+
+.wrap .text:nth-last-child() {
+    padding-bottom: 0px;
+}
+
+.h {
+    border: 1px dashed var(--light-grey);
+    margin: 10px 0px;
+}
+
+#buy_goods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    justify-items: center;
+}
+
+.yourself {
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--light-grey);
+}
+#by_yourself {
+    margin-bottom: 15px;
+}
+
+#delivery textarea {
+    width: 96%;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid var(--grey);
+    font-size: calc(var(--font_size) * 1.5);
+    line-height: calc(var(--font_size) * 2.0);
+    font-family: var(--font_Mont);
+}
+#delivery {
+    margin-top: 15px;
+}
+
+button:active {
+    background: var(--light_pink);
+}
+
+@media (max-width: 1200px) {
+    .content-container {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+}
+@media (max-width: 980px) {
+    form {
+        grid-template-columns: 300px auto;
+        column-gap: 30px;
+    }
+    .content-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (max-width: 800px) {
+    label::before {
+        top: 3px;
+        width: 13px;
+        height: 14px;
+    }
+    #buy {
+        width: 160px;
+        font-size: 14px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 720px) {
+    form {
+        grid-template-columns: 260px auto;
+        column-gap: 30px;
+    }
+    .content-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .h2 {
+        font-size: calc(16px + 4 * (100vw / 1920));
+        line-height: calc(20px + 4 * (100vw / 1920));
+    }
+    .h1 {
+        font-size: calc(19px + 6 * (100vw / 1920));
+        line-height: calc(24px + 6 * (100vw / 1920));
+    }
+    .text {
+        font-size: calc(11px + 4 * (100vw / 1920));
+    }
+    input[type="text"], input[type="tel"] {
+        font-size: calc(var(--font_size) * 1.1);
+        line-height: calc(var(--font_size) * 1.6);
+    }
+    #delivery textarea {
+        font-size: calc(var(--font_size) * 1.1);
+        line-height: calc(var(--font_size) * 1.6);
+    }
+    
+}
+@media (max-width: 620px) {
+    form {
+        grid-template-columns: 240px auto;
+        column-gap: 25px;
+    }
+    .content-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .h2 {
+        font-size: calc(15px + 4 * (100vw / 1920));
+        line-height: calc(20px + 4 * (100vw / 1920));
+    }
+    .h1 {
+        font-size: calc(18px + 6 * (100vw / 1920));
+        line-height: calc(24px + 6 * (100vw / 1920));
+    }
+    .text {
+        font-size: calc(11px + 3 * (100vw / 1920));
+    }
+    input[type="text"], input[type="tel"] {
+        width: 220px;
+        padding: 4px;
+        margin-bottom: 4px;
+    }
+    #delivery textarea {
+        padding: 4px;
+    }
+    #buy {
+        width: 140px;
+        font-size: 14px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 520px) {
+    .text {
+        line-height: 16px;
+    }
+    form {
+        grid-template-columns: 190px auto;
+        column-gap: 15px;
+    }
+    input[type="text"], input[type="tel"] {
+        width: 160px;
+    }
+    #buy {
+        width: 120px;
+        font-size: 12px;
+        height: 30px;
+    }
+}
+@media (max-width: 420px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        row-gap: 15px;
+    }
+    input[type="text"], input[type="tel"] {
+        width: 160px;
+    }
+}
