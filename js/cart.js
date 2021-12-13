@@ -1,5 +1,6 @@
 
 window.onload = function() {
+    //localStorage.clear();
     let temp = document.querySelector('.shops');
 
     let array = document.querySelectorAll('.total');
@@ -51,14 +52,16 @@ window.addEventListener('storage', event => {
     array.forEach(function (item) {
         item.textContent = parseInt(localStorage.getItem('total_cost'));
     });
-    if (event.key > 1) {
+    if (event.key > 1 && event.key % 2 === 0) {
         const elements_in_cart_now = document.getElementsByClassName('shop').length;
         let new_good = JSON.parse(localStorage.getItem(event.key));
         
         if (new_good.IDENT === 'in_cart') {
             let array = document.getElementsByClassName('shop');
+            console.log(array);
 
-            if (elements_in_cart_now === 0 && parseInt(localStorage.getItem('cart_values')) === 2) {
+            if (elements_in_cart_now === 0) {
+
                 let CART = document.getElementById('empty_cart');
                 CART.classList.add('hidden');
                 let GOODS = document.getElementById('we_have_goods');
@@ -95,7 +98,8 @@ window.addEventListener('storage', event => {
             }
             else {
                 for (let i = 0; i < elements_in_cart_now; ++i) {
-                    if (new_good.src === array[i].querySelector('img').attributes.src.nodeValue) {
+                    console.log(new_good.name);
+                    if (new_good.name === array[i].querySelector('.h2').textContent) {
                         array[i].querySelector('.how_much_goods .how_much').textContent = parseInt(array[i].querySelector('.how_much_goods .how_much').textContent) + new_good.total;
                         array[i].querySelector('.cost_block .how_much').textContent = array[i].querySelector('.how_much_goods .how_much').textContent;
                         array[i].querySelector('.final_cost').textContent = parseInt(array[i].querySelector('.how_much_goods .how_much').textContent) * new_good.cost;
@@ -137,6 +141,7 @@ window.addEventListener('storage', event => {
                             </div>
                         </div>`;
                     array[elements_in_cart_now - 1].insertAdjacentHTML('afterend', place_in_cart);
+                
             }
         }
     }
@@ -149,7 +154,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
             let object = event.target.closest('.shop');
             for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
                 let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
-                if (object.querySelector('img').attributes.src.nodeValue === temp_obj.src) {
+                if (object.querySelector('.h2').textContent === temp_obj.name) {
                     price(temp_obj.cost, -1 * temp_obj.total);
                     del(i);
                     object.parentElement.removeChild(object);
@@ -166,7 +171,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
 
             for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
                 let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
-                if (object.querySelector('img').attributes.src.nodeValue === temp_obj.src) {
+                if (object.querySelector('.h2').textContent === temp_obj.name) {
                     total_of_good.textContent = --total_of_good.textContent;
                     price(temp_obj.cost ,-1);
                     if (parseInt(total_of_good.textContent) > 0) {
@@ -190,7 +195,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
 
             for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
                 let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
-                if (object.querySelector('img').attributes.src.nodeValue === temp_obj.src) {
+                if (object.querySelector('.h2').textContent === temp_obj.name) {
                     if (parseInt(total_of_good.textContent) < 1000) {
                         total_of_good.textContent = ++total_of_good.textContent;
                         temp_obj.total = total_of_good.textContent;
@@ -234,6 +239,7 @@ function del(i) {
 function price(cost, total) {
     let total_price = parseInt(localStorage.getItem('total_cost'));
     total_price = total_price + cost * total;
+    if (total_price < 0) total_price = 0;
     localStorage.setItem('total_cost', `${total_price}`)
     let array = document.querySelectorAll('.total');
     array.forEach(function (item) {

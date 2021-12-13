@@ -46,8 +46,6 @@ window.addEventListener('click', function(event) {
             let p = myGood.closest('.content-container').querySelector('.good_description');
 
             if (total_) {
-                all_goods = parseInt(localStorage.getItem('cart_values')) + 2;
-                this.localStorage.setItem('cart_values', `${all_goods}`);
 
                 obj = {
                     IDENT: 'in_cart',
@@ -60,13 +58,29 @@ window.addEventListener('click', function(event) {
                 }
                 bottom_of_good.querySelector('.how_much').textContent = 0;
             }
-
+            
             if (obj) {
+                for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
+                    let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
+                    if (obj.name === temp_obj.name) {
+
+                        obj.total = obj.total + temp_obj.total;
+                        let obj_1 = JSON.stringify(obj);
+                        localStorage.setItem(`${i}`, obj_1);
+                        localStorage.removeItem(event.key);
+                        console.log(localStorage);
+                        return;
+                    }
+                }
+
+                all_goods = parseInt(localStorage.getItem('cart_values')) + 2;
+                localStorage.setItem('cart_values', `${all_goods}`);
+
                 let good = JSON.stringify(obj);
-                this.localStorage.setItem(`${all_goods}`, good);
-                let total_price = parseInt(this.localStorage.getItem('total_cost'));
+                localStorage.setItem(`${all_goods}`, good);
+                let total_price = parseInt(localStorage.getItem('total_cost'));
                 total_price = total_price + obj.cost * obj.total;
-                this.localStorage.setItem('total_cost', `${total_price}`)
+                localStorage.setItem('total_cost', `${total_price}`)
                 document.querySelector('.total').textContent = total_price;
             }
             //this.localStorage.clear();

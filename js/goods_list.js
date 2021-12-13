@@ -1,4 +1,7 @@
 
+let goods_on_page = document.querySelectorAll('.goods_card').length;
+document.querySelector('.all_goods_in_category').textContent = goods_on_page;
+
 //Сортировка 
 window.addEventListener('click', function(event) {
     // console.log(event.target.tagName)
@@ -60,9 +63,5 @@ window.addEventListener('click', function(event) {
             }
             event.target.classList.add('now');
         }
-
-
     }
-
-
 })
