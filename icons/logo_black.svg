@@ -1,0 +1,50 @@
+<svg id="лого" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.83 75.57">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 42px;
+        font-family: MontserratAlternates-Medium, Montserrat Alternates;
+      }
+
+      .cls-1, .cls-4 {
+        fill: #1d1d1b;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        letter-spacing: -0.01em;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #1d1d1b;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        font-size: 16px;
+        font-family: Montserrat-Medium, Montserrat;
+      }
+
+      .cls-5 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-6 {
+        letter-spacing: -0.02em;
+      }
+
+      .cls-7 {
+        letter-spacing: -0.01em;
+      }
+    </style>
+  </defs>
+  <title>logo_black</title>
+  <g>
+    <text class="cls-1" transform="translate(0 35.7)">BA<tspan class="cls-2" x="65.39" y="0">K</tspan><tspan x="95.17" y="0">ERS</tspan></text>
+    <line class="cls-3" x1="32.5" y1="49.2" x2="150" y2="49.2"/>
+    <text class="cls-4" transform="translate(8.25 71.37)"><tspan class="cls-5">С</tspan><tspan x="11.12" y="0">лад</tspan><tspan class="cls-6" x="41.42" y="0">к</tspan><tspan x="50.7" y="0">ое и выпеч</tspan><tspan class="cls-7" x="144.08" y="0">к</tspan><tspan x="153.49" y="0">а</tspan></text>
+  </g>
+</svg>

@@ -112,6 +112,38 @@ form {
 button:active {
     background: var(--light_pink);
 }
+@keyframes shaffle {
+    from {
+        transform: translateX(0em);
+    }
+    7% {
+        transform: translateX(-0.8em);
+    }
+    21% {
+        transform: translateX(0.7em);
+    }
+    34% {
+        transform: translateX(-0.5em);
+    }
+    43% {
+        transform: translateX(0.4em);
+    }
+    67% {
+        transform: translateX(-0.2em);
+    }
+    84% {
+        transform: translateX(0.1em);
+    }
+    94% {
+        transform: translateX(-0.03em);
+    }
+    to {
+        transform: translateX(0em);
+    }
+}
+.failed {
+    animation: shaffle 0.8s ease-in;
+}
 
 @media (max-width: 1200px) {
     .content-container {

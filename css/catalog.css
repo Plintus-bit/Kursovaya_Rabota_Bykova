@@ -1,0 +1,73 @@
+@import url("../css/style_goods_lists.css");
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+}
+.content-container .h1 {
+    align-self: center;
+}
+
+.item {
+    width: max-content;
+    transition: 0.1s;
+}
+.item:hover {
+    color: var(--pink);
+}
+.menu_item a {
+    justify-content: flex-start;
+}
+
+.item_main {
+    position: relative;
+}
+.item_main::after {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 115%;
+    width: 3em;
+    height: 2px;
+    border-radius: 50px;
+    background: var(--pink);
+    transition: 0.2s;
+}
+.menu_item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    gap: 60px 20px;
+}
+.inner_menu_item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    justify-items: flex-start;
+}
+a {
+    color: var(--text_color);
+}
+@media (max-width: 1280px) {
+    .menu_item {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 860px) {
+    .inner_menu_item {
+        gap: 5px;
+    }
+}
+@media (max-width: 800px) {
+    .menu_item {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 10px;
+    }
+}
+@media (max-width: 740px) {
+    .menu_item {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}

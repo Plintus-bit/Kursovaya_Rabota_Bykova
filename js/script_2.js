@@ -98,7 +98,7 @@ window.addEventListener('click', function(event) {
             like.style.fill = 'var(--red)';
             like.style.stroke = 'var(--red)';
         }
-        localStorage.clear();
+        //localStorage.clear();
         console.log(localStorage);
         return;
     }
@@ -131,6 +131,10 @@ window.addEventListener('click', function(event) {
                     let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
                     if (obj.name === temp_obj.name) {
 
+                        let total_price = parseInt(localStorage.getItem('total_cost'));
+                        total_price = total_price + obj.cost * obj.total;
+                        localStorage.setItem('total_cost', `${total_price}`)
+                        document.querySelector('.total').textContent = total_price;
                         obj.total = obj.total + temp_obj.total;
                         let obj_1 = JSON.stringify(obj);
                         localStorage.setItem(`${i}`, obj_1);
@@ -159,18 +163,23 @@ window.addEventListener('click', function(event) {
 });
 
 window.addEventListener('storage', event => {
+    console.log('yes');
     if (event.key === 'favourite') {
+        console.log('YAS!');
         // location.reload();
         let fav = parseInt(localStorage.getItem('favourite'));
-        if (fav > 1) {
-            let fav_array = document.getElementsByClassName('goods_card');
-            for (let i = 3; i <= fav; i = i + 2) {
-                let obj = JSON.parse(localStorage.getItem(`${i}`));
-                for (let j = 0; j < fav_array.length; ++j) {
-                    if (fav_array[j].querySelector('.h4').textContent === obj.name) {
-                        fav_array[j].querySelector('.fav').style.fill = 'var(--red)';
-                        fav_array[j].querySelector('.fav').style.stroke = 'var(--red)';
-                    }
+        console.log('YEE BOYYY!');
+        let fav_array = document.getElementsByClassName('goods_card');
+        for (let i = 0; i < fav_array.length; ++i) {
+            fav_array[i].querySelector('.fav').style.fill = 'none';
+            fav_array[i].querySelector('.fav').style.stroke = 'var(--text_color)';
+        }
+        for (let i = 3; i <= fav; i = i + 2) {
+            let obj = JSON.parse(localStorage.getItem(`${i}`));
+            for (let j = 0; j < fav_array.length; ++j) {
+                if (fav_array[j].querySelector('.h4').textContent === obj.name) {
+                    fav_array[j].querySelector('.fav').style.fill = 'var(--red)';
+                    fav_array[j].querySelector('.fav').style.stroke = 'var(--red)';
                 }
             }
         }
@@ -184,9 +193,9 @@ window.addEventListener('storage', event => {
 
 function del(i) {
     if (i === parseInt(localStorage.getItem('favourite'))) {
-        localStorage.removeItem(`${i}`);
         let all_fav = parseInt(localStorage.getItem('favourite')) - 2;
         localStorage.setItem('favourite', `${all_fav}`);
+        localStorage.removeItem(`${i}`);
         return;
     }
     for (let j = i; j < parseInt(localStorage.getItem('favourite')); j = j + 2) {
@@ -194,7 +203,7 @@ function del(i) {
         localStorage.setItem(`${j}`, temp);
     }
     let temp = parseInt(localStorage.getItem('favourite'));
-    localStorage.removeItem(`${temp}`);
     let all_fav = temp - 2;
     localStorage.setItem('favourite', `${all_fav}`);
+    localStorage.removeItem(`${temp}`);
 }

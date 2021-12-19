@@ -1,5 +1,4 @@
 // Медиа условие, проверяющее viewports на ширину не более 1080 пикселей.
-
 if (window.matchMedia('(max-width: 1080px)')) {
     if (document.querySelector('#categories_on_home_page')) {
         let array = document.querySelector('#categories_on_home_page').getElementsByClassName('category_card');

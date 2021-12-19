@@ -83,7 +83,9 @@
     opacity: 1;
     visibility: visible;
 }
-
+.contents > a {
+    line-height: 40px;
+}
 .contents > a:hover {
     border-color: var(--white);
 }
@@ -435,8 +437,10 @@ div.cart .cart {
     #navigation_panel .navigation_on_site, #navigation_panel .navigation_on_site .second_category {
         width: calc(var(--width_in_px) * 18);
     }
+    .contents > a {
+        line-height: 30px;
+    }
 }
-
 @media (max-width: 1240px) {
     .photo {
         width: calc(230px + 100 * (100vw / 2200));
@@ -473,6 +477,19 @@ div.cart .cart {
         width: calc(210px + 100 * (100vw / 2200));
         height: calc(360px + 100 * (100vw / 2200));
     }
+    @keyframes color_transparent {
+        from {
+            border-color: transparent;
+            transition-timing-function: ease-in;
+        }
+        50% {
+            border-color: var(--white);
+            transition-timing-function: ease-out;
+        }
+        to {
+            border-color: transparent;
+        }
+    }
     .category_card {
         width: 100%;
         height: calc(var(--width_in_px) * 12);
@@ -508,6 +525,45 @@ div.cart .cart {
     #news .content {
         width: 60%;
     }
+    .contents > a {
+        border-color: transparent;
+        line-height: 40px;
+        animation: color_transparent 2.6s infinite;
+    }
+    .contents > a:nth-child(2n) {
+        animation-delay: 1.3s;
+    }
+    #news.clicked .photo:nth-child(1) {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    #news.clicked .photo:nth-child(2) {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    #news.clicked .photo:nth-child(3) {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    #news.clicked .content {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    .category_card.clicked .back::after {
+        opacity: 1;
+        visibility: visible;
+    }
+    .category_card.clicked .back::before {
+        opacity: 1;
+        visibility: visible;
+    }
+    .category_card.clicked .contents {
+        transform: translateY(0%);
+        visibility: visible;
+        opacity: 1;
+    }
+    
     /* НАВИГАЦИЯ ГЛАВНОЙ СТРАНИЦЫ */
 
     #navigation_panel li {
@@ -604,16 +660,16 @@ div.cart .cart {
     .photo {
         width: calc(270px + 90 * (100vw / 2200));
     }
-    #news:hover .photo:nth-child(1) {
-        left: 100%;
-        opacity: 0;
-    }
-    #news:hover .photo:nth-child(3) {
-        opacity: 0;
-    }
     #news .content {
         width: 98%;
         z-index: 4;
+    }
+    #news.clicked .photo:nth-child(1) {
+        left: 100%;
+        opacity: 0;
+    }
+    #news.clicked .photo:nth-child(3) {
+        opacity: 0;
     }
 }
 

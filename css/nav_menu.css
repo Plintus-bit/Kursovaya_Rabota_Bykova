@@ -99,11 +99,9 @@ li > a > div {
     opacity: 1;
     visibility: visible;
 }
-
 #navigation_panel .navigation_on_site li a div, #navigation_panel .navigation_on_site li .second_category li a div {
     max-width: 90%;
 }
-
 .navigation_panel .navigation_on_site li:hover {
     background: var(--pink);
 }

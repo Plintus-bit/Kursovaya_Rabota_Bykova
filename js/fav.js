@@ -1,5 +1,4 @@
 
-
 window.onload = function() {
     let temp = document.querySelector('.goods');
 
