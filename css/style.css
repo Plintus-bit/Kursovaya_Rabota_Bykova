@@ -42,7 +42,7 @@ body {
     --grey: #aaa;
     --width: 1em;
     --width_in_px: 10px;
-    --padding-sides: calc(120px + 80 * (100vw / 1920));
+    --padding-sides: calc(300px + 80 * (100vw / 1920));
 }
 button {
     font-family: var(--font_Mont);
@@ -361,6 +361,16 @@ div.total {
 .hide {
     display: none;
 }
+@media (max-width: 2270px) {
+    :root {
+        --padding-sides: calc(190px + 80 * (100vw / 1920));
+    }
+}
+@media (max-width: 1920px) {
+    :root {
+        --padding-sides: calc(120px + 80 * (100vw / 1920));
+    }
+}
 
 @media (max-width: 1350px) {
     :root {
@@ -402,6 +412,9 @@ div.total {
     .soc_icon {
         height: 24px;
         width: auto;
+    }
+    .content-container {
+        padding: 30px 40px 50px 40px;
     }
 }
 @media (max-width: 520px) {

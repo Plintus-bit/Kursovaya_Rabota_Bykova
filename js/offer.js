@@ -50,15 +50,13 @@ if (place_order) {
         input_tel.value = "";
         if (!localStorage.getItem('orders')) {
             localStorage.setItem('orders', -1);
-        } else {
-            let orders = parseInt(localStorage.getItem('orders'));
-            ++orders;
-            if (orders >= 999999) {
-                orders = 0;
-            }
-            localStorage.setItem('orders', orders);
-            // console.log(localStorage.getItem('orders'))
         }
+        let orders = parseInt(localStorage.getItem('orders'));
+        ++orders;
+        if (orders >= 999999) {
+            orders = 0;
+        }
+        localStorage.setItem('orders', orders);
         window.location.href = 'place_order.html#';
     }
 }

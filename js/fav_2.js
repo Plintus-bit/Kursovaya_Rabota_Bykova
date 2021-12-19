@@ -176,20 +176,18 @@ window.addEventListener('click', function(event) {
         return;
     }
 
+    
     //Если нажали "Добавить в корзину"
     if (event.target.classList.contains('in_shopping_cart') || event.target.classList.contains('shopping_cart') || event.target.classList.contains('cart')) {
         if (event.target.closest('.goods_card')) {
 
             let myGood = event.target.closest('.goods_card');
             let top_of_good = myGood.querySelector('.top');
-            let top_of_good_2 = myGood.querySelector('.top_2');
             let bottom_of_good = myGood.querySelector('.how_much_goods');
-
+            let top_of_good_2 = myGood.querySelector('.top_2');
+    
             let obj;
             if (parseInt(bottom_of_good.querySelector('.how_much').textContent)) {
-                all_goods = parseInt(localStorage.getItem('cart_values')) + 2;
-                localStorage.setItem('cart_values', `${all_goods}`);
-
                 obj = {
                     IDENT: 'in_cart',
                     src: top_of_good_2.querySelector('img').attributes.src.nodeValue,
@@ -203,6 +201,26 @@ window.addEventListener('click', function(event) {
             }
     
             if (obj) {
+                for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
+                    let temp_obj = JSON.parse(localStorage.getItem(`${i}`));
+                    if (obj.name === temp_obj.name) {
+
+                        let total_price = parseInt(localStorage.getItem('total_cost'));
+                        total_price = total_price + obj.cost * obj.total;
+                        localStorage.setItem('total_cost', `${total_price}`)
+                        document.querySelector('.total').textContent = total_price;
+                        obj.total = obj.total + temp_obj.total;
+                        let obj_1 = JSON.stringify(obj);
+                        localStorage.setItem(`${i}`, obj_1);
+                        localStorage.removeItem(event.key);
+                        console.log(localStorage);
+                        return;
+                    }
+                }
+
+                all_goods = parseInt(localStorage.getItem('cart_values')) + 2;
+                localStorage.setItem('cart_values', `${all_goods}`);
+
                 let good = JSON.stringify(obj);
                 localStorage.setItem(`${all_goods}`, good);
                 let total_price = parseInt(localStorage.getItem('total_cost'));
@@ -215,7 +233,7 @@ window.addEventListener('click', function(event) {
             return;
         }
     }
-
+    
     if (event.target.classList[0] === 'favour' || event.target.classList[0] === 'favourites' || event.target.classList[0] === 'fav') {
         let good_card = event.target.closest('.goods_card');
         let name = good_card.querySelector('.h4').textContent;

@@ -7,7 +7,7 @@ window.addEventListener('click', function(event) {
 });
 
 news.addEventListener('click', function(event) {
-    if (window.matchMedia('(max-width: 1080px)')) {
+    if (window.matchMedia('(max-width: 1240px)')) {
         if (!news.classList.contains('clicked')) {
             news.classList.add('clicked');
         }

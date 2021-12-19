@@ -47,7 +47,11 @@
     background: transparent;
     color: var(--white);
 }
-
+span.none {
+    color: var(--pink);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
 section .description {
     color: var(--grey);
 }
