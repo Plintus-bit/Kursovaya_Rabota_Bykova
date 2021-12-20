@@ -9,11 +9,19 @@ window.onload = function() {
     });
     if (parseInt(localStorage.getItem('cart_values')) === 0) {
         let GOODS = document.getElementById('we_have_goods');
-        GOODS.classList.add('hidden');
+        if (!GOODS.classList.contains('hidden')) {
+            GOODS.classList.add('hidden');
+        }
         return;
     }
+    let GOODS = document.getElementById('we_have_goods');
+        if (GOODS.classList.contains('hidden')) {
+            GOODS.classList.remove('hidden');
+        }
     let CART = document.getElementById('empty_cart');
-    CART.classList.add('hidden');
+    if (!CART.classList.contains('hidden')) {
+        CART.classList.add('hidden');
+    }
 
     for(let i = 2; i <= localStorage.getItem('cart_values'); i = i + 2) {
         let good = JSON.parse(localStorage.getItem(`${i}`));
@@ -64,9 +72,13 @@ window.addEventListener('storage', event => {
             if (elements_in_cart_now === 0) {
 
                 let CART = document.getElementById('empty_cart');
-                CART.classList.add('hidden');
+                if (!CART.classList.contains('hidden')) {
+                    CART.classList.add('hidden');
+                }
                 let GOODS = document.getElementById('we_have_goods');
-                GOODS.classList.remove('hidden');
+                if (GOODS.classList.contains('hidden')) {
+                    GOODS.classList.remove('hidden');
+                }
 
                 let place_in_cart = `<div class="shop">
                             <img class="shopping_img" src="${new_good.src}">
@@ -212,9 +224,13 @@ function del(i) {
         localStorage.setItem('cart_values', `${all_goods}`);
         if (parseInt(localStorage.getItem('cart_values')) === 0) {
             let GOODS = document.getElementById('we_have_goods');
-            GOODS.classList.add('hidden');
             let CART = document.getElementById('empty_cart');
-            CART.classList.remove('hidden');
+            if (CART.classList.contains('hidden')) {
+                CART.classList.remove('hidden');
+            }
+            if (!GOODS.classList.contains('hidden')) {
+                GOODS.classList.add('hidden');
+            }
         }
         return;
     }

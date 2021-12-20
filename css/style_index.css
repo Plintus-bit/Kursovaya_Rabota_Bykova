@@ -357,8 +357,10 @@ li > a > div {
     height: 76px;
 }
 .achieve, .achievements {
-    border-radius: 10px;
     overflow: hidden;
+}
+.achievements .achieve:nth-child(1) {
+    border-radius: 10px;
 }
 .achi {
     display: flex;
@@ -644,6 +646,19 @@ div.cart .cart {
     }
     .photo:nth-child(2) {
         display: none;
+    }
+    #news.clicked .photo:nth-child(1) {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    #news.clicked .photo:nth-child(2) {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    #news.clicked .photo:nth-child(3) {
+        right: 0%;
+        left: auto;
+        transform: translateX(0%);
     }
     #news .content {
         width: 48%;

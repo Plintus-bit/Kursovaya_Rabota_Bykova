@@ -9,12 +9,19 @@ window.onload = function() {
 
     if (parseInt(localStorage.getItem('favourite')) === 1) {
         let GOODS = document.getElementById('you_have_fav');
-        GOODS.classList.add('hidden');
+        if (!GOODS.classList.contains('hidden')) {
+            GOODS.classList.add('hidden');
+        }
         return;
     }
-    
+    let GOODS = document.getElementById('you_have_fav');
+    if (GOODS.classList.contains('hidden')) {
+        GOODS.classList.remove('hidden');
+    }
     let FAV = document.getElementById('you_havent_fav');
-    FAV.classList.add('hidden');
+    if (!FAV.classList.contains('hidden')) {
+        FAV.classList.add('hidden');
+    }
 
     for(let i = 3; i <= localStorage.getItem('favourite'); i = i + 2) {
         let new_fav = JSON.parse(localStorage.getItem(`${i}`));
@@ -66,9 +73,13 @@ window.addEventListener('storage', function(event) {
                 let new_fav = JSON.parse(localStorage.getItem(event.key));
                 if (element_in_fav_now === 0 && parseInt(localStorage.getItem('favourite')) === 3) {
                     let FAV = document.getElementById('you_havent_fav');
-                    FAV.classList.add('hidden');
+                    if (!FAV.classList.contains('hidden')) {
+                        FAV.classList.add('hidden');
+                    }
                     let GOODS = document.getElementById('you_have_fav');
-                    GOODS.classList.remove('hidden');
+                    if (GOODS.classList.contains('hidden')) {
+                        GOODS.classList.remove('hidden');
+                    }
 
                     let place_in_fav = `<div class="goods_card">
                         <button class="favourites">
@@ -145,10 +156,14 @@ window.addEventListener('storage', function(event) {
                         array[j].parentElement.removeChild(array[j]);
                     }
                     if (parseInt(localStorage.getItem('favourite')) === 1) {
-                        let FAV = document.getElementById('you_havent_fav');
-                        FAV.classList.remove('hidden');
                         let GOODS = document.getElementById('you_have_fav');
-                        GOODS.classList.add('hidden');
+                        if (!GOODS.classList.contains('hidden')) {
+                            GOODS.classList.add('hidden');
+                        }
+                        let FAV = document.getElementById('you_havent_fav');
+                        if (FAV.classList.contains('hidden')) {
+                            FAV.classList.remove('hidden');
+                        }
                     }
                 }
             }
@@ -257,9 +272,13 @@ function del_2(i) {
 
         if (parseInt(localStorage.getItem('favourite')) === 1) {
             let GOODS = document.getElementById('you_have_fav');
-            GOODS.classList.add('hidden');
+            if (!GOODS.classList.contains('hidden')) {
+                GOODS.classList.add('hidden');
+            }
             let FAV = document.getElementById('you_havent_fav');
-            FAV.classList.remove('hidden');
+            if (FAV.classList.contains('hidden')) {
+                FAV.classList.remove('hidden');
+            }
         }
         return;
     }

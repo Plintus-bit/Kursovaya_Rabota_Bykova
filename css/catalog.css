@@ -7,7 +7,6 @@
 .content-container .h1 {
     align-self: center;
 }
-
 .item {
     width: max-content;
     transition: 0.1s;
@@ -18,9 +17,13 @@
 .menu_item a {
     justify-content: flex-start;
 }
-
 .item_main {
     position: relative;
+}
+#site_navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 .item_main::after {
     content: '';
@@ -35,9 +38,10 @@
 }
 .menu_item {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    justify-items: center;
+    justify-items: flex-start;
     gap: 60px 20px;
 }
 .inner_menu_item {
@@ -52,12 +56,26 @@ a {
 a:active {
     color: var(--pink);
 }
+@media (max-width: 1920px) {
+    .menu_item {
+        width: 90%;
+    }
+}
 @media (max-width: 1280px) {
     .menu_item {
         grid-template-columns: repeat(3, 1fr);
+        width: 88%;
+    }
+}
+@media (max-width: 1000px) {
+    .menu_item {
+        width: 89%;
     }
 }
 @media (max-width: 860px) {
+    .menu_item {
+        width: 91%;
+    }
     .inner_menu_item {
         gap: 5px;
     }
@@ -72,10 +90,29 @@ a:active {
     .menu_item {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
+        width: 80%;
+    }
+}
+@media (max-width: 560px) {
+    .menu_item {
+        width: 83%;
     }
 }
 @media (max-width: 520px) {
     .item_main::after {
         top: 92%;
+    }
+    .menu_item {
+        width: 80%;
+    }
+}
+@media (max-width: 440px) {
+    .menu_item {
+        width: 84%;
+    }
+}
+@media (max-width: 340px) {
+    .menu_item {
+        width: 88%;
     }
 }
