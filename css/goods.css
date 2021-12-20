@@ -71,7 +71,7 @@
     width: inherit;
 }
 .how_much_goods {
-    width: calc(80px + 40 * (100vw / 1920));
+    width: calc(95px + 40 * (100vw / 1920));
     height: calc(20px + 10 * (100vw / 1920));
     border-radius: 6px;
     overflow: hidden;

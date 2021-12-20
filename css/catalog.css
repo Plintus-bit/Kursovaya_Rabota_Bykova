@@ -49,6 +49,9 @@
 a {
     color: var(--text_color);
 }
+a:active {
+    color: var(--pink);
+}
 @media (max-width: 1280px) {
     .menu_item {
         grid-template-columns: repeat(3, 1fr);

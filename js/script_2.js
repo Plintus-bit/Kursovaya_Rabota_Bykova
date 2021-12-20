@@ -133,7 +133,7 @@ window.addEventListener('click', function(event) {
 
                         let total_price = parseInt(localStorage.getItem('total_cost'));
                         total_price = total_price + obj.cost * obj.total;
-                        localStorage.setItem('total_cost', `${total_price}`)
+                        localStorage.setItem('total_cost', `${total_price}`);
                         document.querySelector('.total').textContent = total_price;
                         obj.total = obj.total + temp_obj.total;
                         let obj_1 = JSON.stringify(obj);
