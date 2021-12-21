@@ -56,6 +56,11 @@ button:active {
         column-gap: 5px;
     } 
 }
+@media (max-width: 990px) {
+    .fav_is_absent {
+        width: 52%;
+    } 
+}
 @media (max-width: 980px) {
     .fav_is_absent {
         width: 50%;
@@ -77,7 +82,7 @@ button:active {
 }
 @media (max-width: 770px) {
     .fav_is_absent {
-        width: 75%;
+        width: 65%;
         grid-template-columns: 8% auto;
         column-gap: 10px;
     } 
@@ -85,7 +90,15 @@ button:active {
         font-size: 14px;
     }
 }
+@media (max-width: 750px) {
+    .fav_is_absent {
+        width: 57%;
+    } 
+}
 @media (max-width: 720px) {
+    .fav_is_absent {
+        width: 60%;
+    } 
     .fav_is_absent .h3 {
         font-size: 16px;
     }
@@ -93,9 +106,14 @@ button:active {
         line-height: 18px;
     }
 }
+@media (max-width: 680px) {
+    .fav_is_absent {
+        width: 66%;
+    }
+}
 @media (max-width: 640px) {
     .fav_is_absent {
-        width: 90%;
+        width: 70%;
     }
     #you_havent_fav button {
         width: 190px;
@@ -156,9 +174,14 @@ button:active {
         gap: 20px 20px;
     }
 }
+@media (max-width: 580px) {
+    .fav_is_absent {
+        width: 76%;
+    }
+}
 @media (max-width: 540px) {
     .fav_is_absent {
-        width: 100%;
+        width: 70%;
     }
     #you_havent_fav button {
         width: 170px;
@@ -174,8 +197,14 @@ button:active {
     .fav_is_absent {
         width: 80%;
     }
+    .tab_1 {
+        margin-bottom: 24px;
+    }
 }
 @media (max-width: 460px) {
+    .fav_is_absent {
+        width: 84%;
+    }
     .goods_card {
         width: 150px;
         height: 205px;
@@ -239,6 +268,17 @@ button:active {
         font-size: 13px;
     }
 }
+@media (max-width: 410px) {
+    .fav_is_absent {
+        width: 94%;
+    }
+}
+@media (max-width: 390px) {
+    .fav_is_absent {
+        width: 76%;
+        column-gap: 15px;
+    }
+}
 @media (max-width: 375px) {
     .goods_card {
         width: 130px;
@@ -292,5 +332,10 @@ button:active {
     .fav_is_absent {
         width: 70%;
         column-gap: 20px;
+    }
+}
+@media (max-width: 330px) {
+    .fav_is_absent {
+        width: 90%;
     }
 }
