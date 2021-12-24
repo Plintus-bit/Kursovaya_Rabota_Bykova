@@ -152,6 +152,7 @@ window.addEventListener('storage', event => {
 });
 
 document.getElementById('we_have_goods').addEventListener('click', function(event) {
+    
     if (event.target.tagName === 'BUTTON') {
         //Удаление
         if (event.target.classList.contains('out_of_cart')) {
@@ -171,6 +172,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
         //Уменьшение значения
         if (event.target.classList.contains('minus')) {
             let object = event.target.closest('.shop');
+            let total_of_good_top = object.querySelector('.how_much_goods .how_much');
             let total_of_good = object.querySelector('.cost_block .how_much');
 
             for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
@@ -180,6 +182,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
                     price(temp_obj.cost ,-1);
                     if (parseInt(total_of_good.textContent) > 0) {
                         temp_obj.total = total_of_good.textContent;
+                        total_of_good_top.textContent = total_of_good.textContent;
                         object.querySelector('.final_cost').textContent = temp_obj.total * temp_obj.cost;
                         temp_obj = JSON.stringify(temp_obj);
                         localStorage.setItem(`${i}`, temp_obj)
@@ -195,6 +198,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
         //Увеличение значения
         if (event.target.classList.contains('plus')) {
             let object = event.target.closest('.shop');
+            let total_of_good_top = object.querySelector('.how_much_goods .how_much');
             let total_of_good = object.querySelector('.cost_block .how_much');
 
             for (let i = 2; i <= parseInt(localStorage.getItem('cart_values')); i = i + 2) {
@@ -202,6 +206,7 @@ document.getElementById('we_have_goods').addEventListener('click', function(even
                 if (object.querySelector('.h2').textContent === temp_obj.name) {
                     if (parseInt(total_of_good.textContent) < 1000) {
                         total_of_good.textContent = ++total_of_good.textContent;
+                        total_of_good_top.textContent = total_of_good.textContent;
                         temp_obj.total = total_of_good.textContent;
                         object.querySelector('.final_cost').textContent = temp_obj.total * temp_obj.cost;
                         price(temp_obj.cost ,1);
